@@ -1,0 +1,47 @@
+print ("¡Bienvenido! En esta aplicación los estudiantes podrán gestionar las notas de su materia.")
+
+#paso 1
+name = input("Ingrese nombre del estudiante: ")
+materia = input("Ingrese nombre de la materia: ")
+n1 = int(input("ingrese nota 1: "))
+p1 = int(input("ingrese porcentaje de la nota 1: "))
+porcentaje = p1 
+if porcentaje > 100:
+    print("El porcentaje evaluado de una materia no puede ser mayor a 100")
+    p1 = int(input("ingrese porcentaje de la nota 1: "))
+else:
+  input("Falta añadir notas? S/N ")    
+
+#paso 2
+n2 = int(input("ingrese nota 2: "))
+p2 = int(input("ingrese porcentaje de la nota 2: "))
+porcentaje = (p1+p2)
+if porcentaje > 100:
+  print("El porcentaje evaluado de una materia no puede ser mayor a 100")
+  p2 = int(input("ingrese porcentaje de la nota 2: "))
+else:
+  input("Falta añadir notas? S/N ") 
+  
+#paso 3
+n3 = int(input("ingrese nota 3: "))
+p3 = int(input("ingrese porcentaje de la nota 3: "))
+porcentaje = (p1+p2+p3)
+if porcentaje > 100:
+ print("El porcentaje evaluado de una materia no puede ser mayor a 100")
+ p3 = int(input("ingrese porcentaje de la nota 3: "))
+else:
+  input("Falta añadir notas? S/N ")
+
+#Calculos 
+p1 = p1/100
+p2 = p2/100
+p3 = p3/100
+nota_acumulada = (n1*p1) + (n2*p2) + (n3*p3)
+
+#CondicionalesFin
+if nota_acumulada >= 3:
+  print(name,materia,nota_acumulada)
+  print("El estudiante {} cursó la materia {} y obtuvo {} resultando en Aprobado!".format(name,materia,nota_acumulada))
+  
+else:
+  print("El estudiante {} cursó la materia {} y obtuvo {} resultando en Reprobado!".format(name,materia,nota_acumulada))
