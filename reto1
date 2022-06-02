@@ -1,0 +1,29 @@
+print("¡Bienvenido! En esta aplicación los estudiantes podrán gestionar las notas de su materia.")
+nombre = input("Ingrese nombre del estudiante: ")
+materia = input("Ingrese el nombre de la materia: ")
+porcentaje = 0
+porcentaje_acumulado = 0
+suma_nota = 0
+respuesta = "S"
+
+
+
+while respuesta == "S":
+    nota = float(input("Ingrese la nota obtenida: "))
+    porcentaje = float(input("Ingrese el porcentaje de la nota obtenida: ")) 
+    nota_acumulada = nota*porcentaje/100   
+    if porcentaje_acumulado + porcentaje > 100:
+        print("El porcentaje evaluado de una materia no puede ser mayor a 100")       
+    else:
+        porcentaje_acumulado += porcentaje
+        suma_nota += nota*porcentaje/100
+        if porcentaje_acumulado == 100:
+            break
+        respuesta = input("¿Falta añadir notas? S/N? ")     
+if suma_nota >= 3:
+    resultado_aprobacion = "Aprobado"
+else:
+    resultado_aprobacion = "Reprobado"
+        
+suma_nota = round(suma_nota, 2)
+print(f'El estudiante {nombre.capitalize()} cursó la materia {materia.capitalize()} y obtuvo {suma_nota} resultando en {resultado_aprobacion}')
